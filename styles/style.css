@@ -1,16 +1,66 @@
 :root {
     --White: hsl(0, 0%, 100%);
+    --LightGreen: hsl(148, 38%, 91%);
+    --Green: hsl(169, 82%, 27%);
     --LightGrey: hsl(186, 15%, 59%);
-    --DarkGrey: hsl(186, 15%, 59%);
-    --Red: hsl(0, 100%, 50%);
+    --Grey: hsl(189, 24%, 22%);
+    --Red: hsl(0, 66%, 54%);
 }
 
+/* main body */
 body {
     font-family: "Karla", sans-serif;
     src: url(../assets/fonts/static/Karla-Regular.ttf);
+    background-color: var(--LightGreen);
+}
+main {
+    background-color: var(--White);
+    padding: 0.5rem 1.5rem;
 }
 
+/* Error message */
 .error-message {
     display: none;
     color: var(--Red);
+}
+
+
+/* Form Designs */
+.input-wrapper {
+    margin-top: 1.5rem;
+}
+input[type=text], input[type=email] {
+    width: 95%;
+    padding: 0.7rem 0.5rem;
+    border: 1px solid #87a3a6;
+    border-radius: 0.5rem;
+}
+.input-wrapper:nth-of-type(1),
+.input-wrapper:nth-of-type(2),
+.input-wrapper:nth-of-type(3),
+.input-wrapper:nth-of-type(4),
+.input-wrapper:nth-of-type(5) {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Radio box design */
+.radio-box {
+    width: 95%;
+    border: 1px solid #87a3a6;
+    padding: 0.7rem 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Message or textarea design */
+textarea {
+    width: 95%;
+    height: 8rem;
+    padding: 0.7rem 0.5rem;
+    border: 1px solid #87a3a6;
+    resize: none;
+    border-radius: 0.5rem;
 }
