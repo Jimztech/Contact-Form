@@ -12,34 +12,49 @@
 
 </head>
 <body>
+  <main>
+    <h1>Contact Us</h1>
 
-  Contact Us
+    <form action="/registration">
+      <div class="input-wrapper">
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" id="firstname">
+        <span class="error-message">This field is required</span>
+      </div>
 
-  First Name
-  This field is required
+      <div class="input-wrapper">
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" id="lastname">
+        <span class="error-message">This field is required</span>
+      </div>
 
-  Last Name
-  This field is required
+      <div class="input-wrapper">
+        <label for="email">Email Address</label>
+        <input type="email" name="email-address" id="email" aria-describedby="error-message">
+        <span id="email-error" class="error-message">Please enter a valid email address</span>
+      </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <div class="input-wrapper">
+        <label>Query Type</label>
+        <input type="radio" name="enquiry" value="General Enquiry">
+        <input type="radio" name="enquiry" value="Support Request">
+        <span class="error-message">Please select a query type</span>
+      </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+      <div class="input-wrapper">
+        <label for="message">Message</label>
+        <textarea name="message" id="message"></textarea>
+        <span class="error-message">This field is required</span>
+      </div>
 
-  Message
-  This field is required
+      I consent to being contacted by the team
+      <span class="error-message">To submit this form, please consent to being contacted</span>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
+      <div class="input-wrapper">
+        <input type="submit" id="submit" value="Submit">
+      </div>
+    </form>
+  </main>
+  <script src="./index.js"></script>
 </body>
 </html>
