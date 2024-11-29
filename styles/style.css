@@ -1,7 +1,7 @@
 :root {
     --White: hsl(0, 0%, 100%);
-    --LightGreen: hsl(148, 38%, 91%);
-    --Green: hsl(169, 82%, 27%);
+    --LightGreen: #dff1e7;
+    --Green: #0c7d69;
     --LightGrey: hsl(186, 15%, 59%);
     --Grey: hsl(189, 24%, 22%);
     --Red: hsl(0, 66%, 54%);
@@ -16,6 +16,7 @@ body {
 main {
     background-color: var(--White);
     padding: 0.5rem 1.5rem;
+    border-radius: 0.8rem;
 }
 
 /* Error message */
@@ -53,6 +54,17 @@ input[type=text], input[type=email] {
     padding: 0.7rem 0.5rem;
     margin-top: 0.5rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+}
+.radio-box:hover {
+    border-color: #0c7d69;
+    background-color: #dff1e7;
+}
+input[type="radio"] {
+    accent-color: #0c7d69;
+}
+input[type="radio"]:checked {
+    background-color: #0c7d69;
 }
 
 /* Message or textarea design */
@@ -63,4 +75,46 @@ textarea {
     border: 1px solid #87a3a6;
     resize: none;
     border-radius: 0.5rem;
+}
+
+/* consent checkbox design */
+input[type="checkbox"] {
+    appearance: none;
+    border: 1px solid #87a3a6;
+    background-color: var(--Green);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.15rem;
+    display: grid;
+    place-content: center;
+}
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.7rem;
+    height: 0.6rem;
+    transform: scale(0);
+    transition: 120ms ease-in-out;
+    box-shadow: inset 1em 1em var(--White);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+.form-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 0.9rem 0.5rem;
+    border: 1px solid #87a3a6;
+    border-radius: 0.5rem;
+    background-color: var(--Green);
+    color: var(--White);
+    font-size: 1rem;
+    margin: 0.5rem 0 0.7rem 0;
 }
