@@ -18,6 +18,9 @@ main {
     padding: 0.5rem 1.5rem;
     border-radius: 0.8rem;
 }
+.asterisk {
+    color: var(--Green);
+}
 
 /* Error message */
 .error-message {
@@ -35,6 +38,7 @@ input[type=text], input[type=email] {
     padding: 0.7rem 0.5rem;
     border: 1px solid #87a3a6;
     border-radius: 0.5rem;
+    font-size: 1.2rem;
 }
 input[type="text"]:focus,
 input[type="email"]:focus, textarea:focus {
@@ -81,6 +85,7 @@ textarea {
     border: 1px solid #87a3a6;
     resize: none;
     border-radius: 0.5rem;
+    font-size: 1.2rem;
 }
 
 /* consent checkbox design */
@@ -168,3 +173,42 @@ input[type="submit"] {
 }
 
 /* screen size starting from 900px */
+@media (min-width: 56.25rem) {
+    body {
+        padding: 6rem;
+    }
+    .first-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 97%;
+        gap: 1rem;
+    }
+    input[type=text], input[type=email] {
+        padding: 1rem 0.5rem;
+    }
+
+    /* radio box design */
+    .input-wrapper:nth-of-type(3) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem; 
+        align-items: center;
+        width: 97%;
+    }
+    .input-wrapper:nth-of-type(3) > label:first-of-type {
+        grid-column: 1 / -1; 
+        line-height: 0.3rem;
+    }
+    .input-wrapper:nth-of-type(3) .error-message {
+        grid-column: 1 / -1; 
+        color: red;
+    }
+
+    /* Submit button */
+    input[type="submit"] {
+        width: 97%;
+        padding: 1rem 0.5rem;
+        margin: 1.5rem 0 1.5rem 0;
+        font-size: 1.5rem;
+    }
+}

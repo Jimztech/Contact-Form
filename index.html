@@ -19,26 +19,26 @@
       <form action="/registration">
         <div class="first-container">
           <div class="input-wrapper">
-            <label for="firstname">First Name</label>
+            <label for="firstname">First Name <span class="asterisk">*</span></label>
             <input type="text" name="firstname" id="firstname" required>
             <span class="error-message">This field is required</span>
           </div>
 
           <div class="input-wrapper">
-            <label for="lastname">Last Name</label>
+            <label for="lastname">Last Name <span class="asterisk">*</span></label>
             <input type="text" name="lastname" id="lastname" required>
             <span class="error-message">This field is required</span>
           </div>
         </div>
 
         <div class="input-wrapper">
-          <label for="email">Email Address</label>
+          <label for="email">Email Address <span class="asterisk">*</span></label>
           <input type="email" name="email-address" id="email" aria-describedby="error-message" required>
           <span id="email-error" class="error-message">Please enter a valid email address</span>
         </div>
 
         <div class="input-wrapper">
-          <label>Query Type</label>
+          <label>Query Type <span class="asterisk">*</span></label>
           <label class="radio-box">
             <input type="radio" name="enquiry" value="General Enquiry"> General Enquiry
           </label>
@@ -46,19 +46,19 @@
           <label class="radio-box">
             <input type="radio" name="enquiry" value="Support Request">Support Request
           </label>
-          <span class="error-message errors">Please select a query type</span>
+          <span class="error-message">Please select a query type</span>
         </div>
 
         <div class="input-wrapper">
-          <label for="message">Message</label>
+          <label for="message">Message <span class="asterisk">*</span></label>
           <textarea name="message" id="message" required></textarea>
           <span class="error-message">This field is required</span>
         </div>
 
         <div class="input-wrapper">
           <label class="form-control">
-            <input type="checkbox" id="consent" name="checkbox">
-            I consent to being contacted by the team
+            <input type="checkbox" id="consent" name="checkbox" required>
+            I consent to being contacted by the team <span class="asterisk">*</span>
           </label>
           <span class="error-message">
             To submit this form, please consent to being contacted
