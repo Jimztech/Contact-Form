@@ -17,16 +17,18 @@
 
     <div class="form-design">
       <form action="/registration">
-        <div class="input-wrapper">
-          <label for="firstname">First Name</label>
-          <input type="text" name="firstname" id="firstname" required>
-          <span class="error-message">This field is required</span>
-        </div>
+        <div class="first-container">
+          <div class="input-wrapper">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" required>
+            <span class="error-message">This field is required</span>
+          </div>
 
-        <div class="input-wrapper">
-          <label for="lastname">Last Name</label>
-          <input type="text" name="lastname" id="lastname" required>
-          <span class="error-message">This field is required</span>
+          <div class="input-wrapper">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" required>
+            <span class="error-message">This field is required</span>
+          </div>
         </div>
 
         <div class="input-wrapper">
@@ -44,7 +46,7 @@
           <label class="radio-box">
             <input type="radio" name="enquiry" value="Support Request">Support Request
           </label>
-          <span class="error-message">Please select a query type</span>
+          <span class="error-message errors">Please select a query type</span>
         </div>
 
         <div class="input-wrapper">
