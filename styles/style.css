@@ -2,6 +2,7 @@
     --White: hsl(0, 0%, 100%);
     --LightGreen: #dff1e7;
     --Green: #0c7d69;
+    --DarkGreen: hsl(120, 100%, 20%);
     --LightGrey: hsl(186, 15%, 59%);
     --Grey: hsl(189, 24%, 22%);
     --Red: hsl(0, 66%, 54%);
@@ -26,6 +27,46 @@ main {
 .error-message {
     display: none;
     color: var(--Red);
+}
+
+/* Success message container styles */
+.success-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--DarkGreen);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    z-index: 1000;
+}
+.success-message {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: var(--White);
+}
+.success-paragraph {
+    color: var(--White);
+}
+.success-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; 
+}
+.success-container + body::before {
+    display: block;
 }
 
 

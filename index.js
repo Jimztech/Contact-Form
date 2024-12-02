@@ -25,6 +25,7 @@ function hideError(input) {
     }
 }
 
+
 // Function to validate fields.
 function validateField(input) {
     if(input.type === "radio") {
@@ -60,20 +61,52 @@ function validateForm () {
     isValid &= validateField(firstName);
     isValid &= validateField(lastName);
     isValid &= validateField(emailAddress);
+    isValid &= validateField(queryType[0]);
+    isValid &= validateField(message);
+    isValid &= validateField(consent);
+
+
+    return !!isValid;
 }
 
 
-/* Success Message
-main.innerhtml = `
-    <div>
-        <img 
-            src="./assets/images/icon-success-check.svg"
-            class="success-check"
-            alt="success icon" 
-        />
-        <h1 class"success-message">Message Sent!</h1>
-    </div>
-    <p>Thanks for completing the form. We'll be in touch soon!</p>
-`
+// Function to display the success message
+function showSuccessMessage () {
+    const successMessage = document.createElement("div");
+    successMessage.classList.add("success-container");
 
-*/
+    // Add content to the success message
+    successMessage.innerHTML = `
+        <div class="success-content">
+            <img 
+                src="./assets/images/icon-success-check.svg"
+                class="success-check"
+                alt="success icon"
+            />
+            <h1 class="success-message">Message Sent!</h1>
+        </div>
+        <p class="success-paragraph">Thanks for completing the form. We'll be in touch soon!</p>
+    `
+
+    document.body.appendChild(successMessage);
+    
+    setTimeout(() => {
+        successMessage.remove();
+    }, 3000);
+}
+
+
+// Event listener for submit button
+submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    if(validateForm()) {
+        showSuccessMessage();
+
+        form.reset();
+
+        errorMessages.forEach(error => {
+            error.style.display = "none";
+        });
+    }
+})
